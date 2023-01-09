@@ -1,0 +1,80 @@
+$ ./buildx.sh 
+github.com/docker/buildx v0.7.1-docker 05846896d149da05f3d6fd1e7770da187b52a247
+Attempting build, try 1
+[+] Building 96.6s (47/47) FINISHED                                                                                             
+ => [internal] booting buildkit                                                                                            8.4s
+ => => pulling image moby/buildkit:buildx-stable-1                                                                         4.2s
+ => => creating container buildx_buildkit_cross-build0                                                                     4.3s
+ => [internal] load build definition from Dockerfile                                                                       0.3s
+ => => transferring dockerfile: 743B                                                                                       0.0s
+ => [internal] load .dockerignore                                                                                          0.4s
+ => => transferring context: 88B                                                                                           0.0s
+ => [linux/arm64 internal] load metadata for docker.io/library/alpine:3.15.0                                               6.9s
+ => [linux/arm/v7 internal] load metadata for docker.io/library/alpine:3.15.0                                              7.0s
+ => [linux/arm/v6 internal] load metadata for docker.io/library/alpine:3.15.0                                              7.0s
+ => [linux/amd64 internal] load metadata for docker.io/library/alpine:3.15.0                                               7.0s
+ => [auth] library/alpine:pull token for registry-1.docker.io                                                              0.0s
+ => [internal] load build context                                                                                          0.4s
+ => => transferring context: 30.56kB                                                                                       0.0s
+ => [linux/arm/v6 1/9] FROM docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c  0.3s
+ => => resolve docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300     0.4s
+ => => sha256:e4a43de54da9e309482f6762f0c11f5f547cd8fd61a49c5f158453066162023e 2.63MB / 2.63MB                             0.3s
+ => => extracting sha256:e4a43de54da9e309482f6762f0c11f5f547cd8fd61a49c5f158453066162023e                                  0.3s
+ => [linux/arm/v7 1/9] FROM docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c  0.3s
+ => => resolve docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300     0.4s
+ => => sha256:5480d2ca1740c20ce17652e01ed2265cdc914458acd41256a2b1ccff28f2762c 2.43MB / 2.43MB                             0.3s
+ => => extracting sha256:5480d2ca1740c20ce17652e01ed2265cdc914458acd41256a2b1ccff28f2762c                                  0.3s
+ => [linux/amd64 1/9] FROM docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c7  0.3s
+ => => resolve docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300     0.4s
+ => => sha256:59bf1c3509f33515622619af21ed55bbe26d24913cedbca106468a5fb37a50c3 2.82MB / 2.82MB                             0.2s
+ => => extracting sha256:59bf1c3509f33515622619af21ed55bbe26d24913cedbca106468a5fb37a50c3                                  0.3s
+ => [linux/arm64 1/9] FROM docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c7  0.3s
+ => => resolve docker.io/library/alpine:3.15.0@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300     0.4s
+ => => sha256:9b3977197b4f2147bdd31e1271f811319dcd5c2fc595f14e81f5351ab6275b99 2.72MB / 2.72MB                             0.2s
+ => => extracting sha256:9b3977197b4f2147bdd31e1271f811319dcd5c2fc595f14e81f5351ab6275b99                                  0.3s
+ => [linux/arm/v7 2/9] RUN apk add --update bash python3 shadow tzdata     && rm -rf /var/cache/apk/*     && useradd -UM  34.4s
+ => [linux/arm/v6 2/9] RUN apk add --update bash python3 shadow tzdata     && rm -rf /var/cache/apk/*     && useradd -UM  34.1s
+ => [linux/amd64 2/9] RUN apk add --update bash python3 shadow tzdata     && rm -rf /var/cache/apk/*     && useradd -UMr   4.2s
+ => [linux/arm64 2/9] RUN apk add --update bash python3 shadow tzdata     && rm -rf /var/cache/apk/*     && useradd -UMr  33.8s
+ => [linux/amd64 3/9] COPY COPYING /                                                                                       0.8s
+ => [linux/amd64 4/9] COPY setuid.sh /setuid.sh                                                                           29.3s
+ => [linux/arm/v6 3/9] COPY COPYING /                                                                                      2.2s
+ => [linux/arm64 3/9] COPY COPYING /                                                                                       2.2s
+ => [linux/amd64 5/9] COPY entrypoint.sh /entrypoint.sh                                                                    2.1s
+ => [linux/arm/v7 3/9] COPY COPYING /                                                                                      2.2s
+ => [linux/arm/v6 4/9] COPY setuid.sh /setuid.sh                                                                           1.4s
+ => [linux/amd64 6/9] COPY crontab /var/spool/cron/crontabs/dashcam                                                        1.7s
+ => [linux/arm64 4/9] COPY setuid.sh /setuid.sh                                                                            1.7s
+ => [linux/arm/v7 4/9] COPY setuid.sh /setuid.sh                                                                           1.8s
+ => [linux/arm/v6 5/9] COPY entrypoint.sh /entrypoint.sh                                                                   1.6s
+ => [linux/amd64 7/9] COPY --chown=dashcam blackvuesync.sh /blackvuesync.sh                                                1.9s
+ => [linux/arm64 5/9] COPY entrypoint.sh /entrypoint.sh                                                                    1.8s
+ => [linux/arm/v7 5/9] COPY entrypoint.sh /entrypoint.sh                                                                   1.6s
+ => [linux/arm/v6 6/9] COPY crontab /var/spool/cron/crontabs/dashcam                                                       1.7s
+ => [linux/amd64 8/9] RUN chmod +x /blackvuesync.sh                                                                        1.8s
+ => [linux/arm64 6/9] COPY crontab /var/spool/cron/crontabs/dashcam                                                        1.8s
+ => [linux/arm/v7 6/9] COPY crontab /var/spool/cron/crontabs/dashcam                                                       1.8s
+ => [linux/arm/v6 7/9] COPY --chown=dashcam blackvuesync.sh /blackvuesync.sh                                               1.9s
+ => [linux/amd64 9/9] COPY --chown=dashcam blackvuesync.py /blackvuesync.py                                                2.1s
+ => [linux/arm64 7/9] COPY --chown=dashcam blackvuesync.sh /blackvuesync.sh                                                2.2s
+ => [linux/arm/v7 7/9] COPY --chown=dashcam blackvuesync.sh /blackvuesync.sh                                               2.0s
+ => [linux/arm/v6 8/9] RUN chmod +x /blackvuesync.sh                                                                       1.9s
+ => [linux/arm64 8/9] RUN chmod +x /blackvuesync.sh                                                                        1.9s
+ => [linux/arm/v7 8/9] RUN chmod +x /blackvuesync.sh                                                                       2.0s
+ => [linux/arm/v6 9/9] COPY --chown=dashcam blackvuesync.py /blackvuesync.py                                               1.5s
+ => [linux/arm64 9/9] COPY --chown=dashcam blackvuesync.py /blackvuesync.py                                                1.0s
+ => [linux/arm/v7 9/9] COPY --chown=dashcam blackvuesync.py /blackvuesync.py                                               1.0s
+ => exporting to image                                                                                                    31.6s
+ => => exporting layers                                                                                                   18.9s
+ => => exporting manifest sha256:b217e9c1f4dc9a7ef5ce1a0253d1e73ab3049832daad71be563cfde5ec7dc7e7                          0.2s
+ => => exporting config sha256:5fb44489095a79577bb7f3d6bdf8f70099c023989900b3b8dbe4d52e10717a7f                            0.2s
+ => => exporting manifest sha256:b099991f638d37b86daa5efef63bda3308ffe9c42c7792332739a64042f14f6c                          0.4s
+ => => exporting config sha256:417ab8690023e50b7e1c92b0e36cf090f04dc76a854b19077e6c0a326e2a2a94                            0.4s
+ => => exporting manifest sha256:7c2cb0fdc18c03cac5e6d32cd52b4a10c2ec14688ccfd499fbd2a540ac71ee73                          0.5s
+ => => exporting config sha256:7b5878bfac61538c20d2333db1233e5ac2934e658da20f222c10722658f69288                            0.4s
+ => => exporting manifest sha256:ed7fc638471ad7799be6f19018cf9d57ba9735051bfeacfec23dc47830a2cbbf                          0.6s
+ => => exporting config sha256:5d71f8c2eb61834a2209bd90f2a5cc2242785c268fc806c7a3ff7c29cf9c81b1                            0.4s
+ => => exporting manifest list sha256:b587fc5b14e5c0351af39a86493bc6a3f879a2e55afe76967ff55b0f363f3335                     0.5s
+ => => pushing layers                                                                                                      7.3s
+ => => pushing manifest for docker.io/atripathy86/blackvuesync:latest@sha256:b587fc5b14e5c0351af39a86493bc6a3f879a2e55afe  1.4s
+ => [auth] atripathy86/blackvuesync:pull,push token for registry-1.docker.io      

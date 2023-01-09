@@ -1,8 +1,8 @@
 version: '3.0'
 services:
   blackvuesync:
-    #image: acolomba/blackvuesync
-    build: .
+    image: atripathy86/blackvuesync
+    #build: .
     container_name: blackvuesync
     restart: unless-stopped
 
