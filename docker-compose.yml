@@ -1,19 +1,21 @@
 version: '3.0'
 services:
   blackvuesync:
-    image: acolomba/blackvuesync
+    #image: acolomba/blackvuesync
+    build: .
     container_name: blackvuesync
     restart: unless-stopped
 
     volumes:
     # Recording download destination. Change only the part before the colon.
-    - /mnt/dashcam:/recordings:rw
+    - /mnt/Bulk/blackvue_vids:/recordings:rw
 
     environment:
       # Dashcam address
-      # ADDRESS: dashcam.example.net
+      ADDRESS: 10.99.77.1
 
       # Set these to the desired destination directory's user id and group id.
+      # id -a
       PUID: 1000
       PGID: 1000
 
@@ -21,7 +23,7 @@ services:
       # not respect Daylight Savings Time, so their clock needs to be adjusted
       # periodically. For the complete list of possible values, see:
       # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-      TZ: America/New_York
+      TZ: America/Chicago
 
       # Priority to download recordings. Pick "date" to download from oldest to
       # newest; pick "rdate" to download from oldest to newest; pick "type" to
@@ -37,7 +39,7 @@ services:
       # retention period will be removed from the destination. Accepted units
       # are 'd' for days and 'w' for weeks. If no unit is indicated, days are
       # assumed.
-      KEEP: 2w
+      KEEP: 48w
 
       # Stops downloading if the amount of used disk space exceeds the indicated
       # percentage value.
@@ -47,7 +49,7 @@ services:
       TIMEOUT: 10.0
 
       # Set to a number greater than zero to increase logging verbosity.
-      VERBOSE: 0
+      VERBOSE: 10
 
       # Set to any value to quiet down logs: only unexpected errors will be
       # logged.

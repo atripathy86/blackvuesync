@@ -53,7 +53,10 @@ ratio = dashcam_bitrate / download_speed => 1.1
 
 ### Verifying Connectivity
 
-For illustration purposes, all examples assume that the camera is reachable at the `dashcam.example.net` address. A static numeric IP address works just as well.
+For illustration purposes, all examples assume that the camera is reachable at the `dashcam.example.net` address. A static numeric IP address works just as well. The SSID exposed by a DX9000 is something like: `SSID: BlackVue900XPlus-E8B0BC`. 
+
+The default address of the camera is usually **10.99.77.1**
+It assigns IP addresses like this to connected devices: `inet 10.99.77.21/24 brd 10.99.77.255`
 
 A quick way to verify that the dashcam is online is by using `curl`.
 

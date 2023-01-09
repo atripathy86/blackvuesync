@@ -1,1 +1,1 @@
-*/15 * * * * /blackvuesync.sh
+*/1 * * * * /blackvuesync.sh
